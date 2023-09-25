@@ -66,8 +66,7 @@ defmodule OliveiraVictorPWeb.Router do
 
     live_session :require_authenticated_user,
       on_mount: [{OliveiraVictorPWeb.UserAuth, :ensure_authenticated}] do
-      live "/home", HomeLive
-      live "/create", CreateGistLive
+      live "/studyHall", StudyHallLive
       live "/users/settings", UserSettingsLive, :edit
       live "/users/settings/confirm_email/:token", UserSettingsLive, :confirm_email
     end
@@ -80,6 +79,12 @@ defmodule OliveiraVictorPWeb.Router do
 
     live_session :current_user,
       on_mount: [{OliveiraVictorPWeb.UserAuth, :mount_current_user}] do
+      live "/home", HomeLive
+      live "/about", AboutLive
+      live "/projects", ProjectsLive
+      live "/blog", BlogLive
+      live "/freeMaterials", FreeMaterialsLive
+      live "/talkToMe", TalkToMeLive
       live "/users/confirm/:token", UserConfirmationLive, :edit
       live "/users/confirm", UserConfirmationInstructionsLive, :new
     end

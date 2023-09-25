@@ -1,44 +1,50 @@
-<header class="flex justify-between items-center px-6 py-3 bg-emDark">
+<header class="flex justify-between items-center px-6 py-3 em-puurple">
   <div class="flex relative">
-    <a href={~p"/"}>
-      <img src="/images/elixir-logo.svg" alt="Logo" class="h-8 w-auto" />
+    <a href={~p"/"} class="mr-1">
+      <Heroicons.LiveView.icon name="beaker" type="solid" class="h-8 w-8" alt="Logo" />
     </a>
     <a href={~p"/"} class="mr-6">
       <div class="text-white font-brand font-bold text-3xl">oliveiravictorp</div>
     </a>
-    <div>
-      <input
-        type="text"
-        class="rounded-lg focus:outline-none focus:border-emLavender focus:ring-0 px-3 py-1 bg-emDark-dark placeholder-emDark-light text-white font-brand font-regular text-sm mr-5 border-white"
-        placeholder="Search..."
-      />
-      <button class="mt-2 mr-3 text-white text-[1rem] font-brand font-bold hover:text-emDark-light">
-        Home
-      </button>
-      <button class="mt-2 mr-3 text-white text-[1rem] font-brand font-bold hover:text-emDark-light">
-        Sobre mim
-      </button>
-      <button class="mt-2 mr-3 text-white text-[1rem] font-brand font-bold hover:text-emDark-light">
-        Projetos
-      </button>
-      <button class="mt-2 mr-3 text-white text-[1rem] font-brand font-bold hover:text-emDark-light">
-        Blog
-      </button>
-      <button class="mt-2 mr-3 text-white text-[1rem] font-brand font-bold hover:text-emDark-light">
-        Conteúdos Gratuitos
-      </button>
-      <button class="mt-2 mr-3 text-white text-[1rem] font-brand font-bold hover:text-emDark-light">
-        Sala de estudos
-      </button>
-    </div>
   </div>
   <div class="relative">
+    <a href={~p"/"} class="mt-2 mr-3 text-white text-[1rem] font-brand font-bold hover:text-emDark-light">
+      Home
+    </a>
+    <a href={~p"/about"} class="mt-2 mr-3 text-white text-[1rem] font-brand font-bold hover:text-emDark-light">
+      Sobre mim
+    </a>
+    <a href={~p"/projects"} class="mt-2 mr-3 text-white text-[1rem] font-brand font-bold hover:text-emDark-light">
+      Projetos
+    </a>
+    <a href={~p"/blog"} class="mt-2 mr-3 text-white text-[1rem] font-brand font-bold hover:text-emDark-light">
+      Blog
+    </a>
+    <a href={~p"/freeMaterials"} class="mt-2 mr-3 text-white text-[1rem] font-brand font-bold hover:text-emDark-light">
+      Materiais Gratuitos
+    </a>
+    <a href={~p"/studyHall"} class="mt-2 mr-3 text-white text-[1rem] font-brand font-bold hover:text-emDark-light">
+      Sala de estudos
+    </a>
+    <a href={~p"/talkToMe"} class="mt-2 mr-3 text-white text-[1rem] font-brand font-bold hover:text-emDark-light">
+      Fale comigo
+    </a>
+  </div>
+  <div class="relative">
+    <button phx-click={JS.dispatch("toogle-darkmode")}>
+      <Heroicons.LiveView.icon name="moon" type="solid" class="h-8 w-8" alt="Logo" />
+    </button>
+    <input
+      type="text"
+      class="rounded-lg focus:outline-none focus:border-emLavender focus:ring-0 px-3 py-1 bg-emDark-dark placeholder-emDark-light text-white font-brand font-regular text-sm mr-5 border-white"
+      placeholder="Search..."
+    />
     <button class="img-down-arrow" type="button" id="user-menu-button" phx-click={LiveGistWeb.Layouts.App.toggle_dropdown_menu()}>
       <img src="/images/user-image.svg" alt="Profile Image" class="round-image-padding w-8 h-8" />
     </button>
     <div
       id="dropdown_menu"
-      class="dropdown-menu-arrow absolute right-0 mt-2 py-2 w-48 bg-emDark rounded-lg shadow-xl border border-white"
+      class="dropdown-menu-arrow absolute right-0 mt-2 py-2 w-48 bg-emDark-dark rounded-lg shadow-xl border border-white"
       hidden="true"
       >
       <%= if @current_user do %>
