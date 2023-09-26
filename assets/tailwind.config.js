@@ -14,6 +14,7 @@ module.exports = {
           dark: "#010101",
           DEFAULT: "#3C3B3B",
           light: "#828282",
+          white: "#EEE",
         },
         emPurple: {
           dark: "#631A61",
