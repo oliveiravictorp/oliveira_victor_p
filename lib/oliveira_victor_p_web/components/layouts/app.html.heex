@@ -1,26 +1,26 @@
 <div class=" flex flex-col h-screen">
   <header class="flex justify-center bg-emPurple-dark">
-    <container class="max-w-7xl flex-grow px-6 py-3 border-b border-header">
+    <container class="md:max-w-7xl flex-grow px-6 py-3 border-b border-header">
       <div class="flex justify-between items-center">
         <logo class="flex relative">
           <a href={~p"/"}>
-            <img src="/images/balance.svg" alt="Balance Icon" class="h-9" />
+            <img src="/images/balance.svg" alt="Balance Icon" class="h-8 md:h-9" />
           </a>
           <a href={~p"/"}>
-            <div class="text-white font-brand font-bold text-3xl">oliveiravictorp</div>
+            <div class="text-white font-brand font-bold text-2xl md:text-3xl">oliveiravictorp</div>
           </a>
         </logo>
         <sidenav class="flex relative space-x-3">
           <button phx-click={JS.dispatch("toogle-darkmode")}>
-            <img src="/images/sun.svg" alt="Sun Icon" class="h-10" />
+            <img src="/images/sun.svg" alt="Sun Icon" class="h-9 md:h-10" />
           </button>
           <input
             type="text"
-            class="rounded-lg focus:outline-none focus:border-emLavender focus:ring-0 px-3 py-1 bg-emDark placeholder-emDark-white text-white font-brand font-regular text-sm border-white"
+            class="rounded-lg focus:outline-none focus:border-emLavender focus:ring-0 px-2 md:px-3 py-0 md:py-1 bg-emDark placeholder-emDark-white text-white font-brand font-regular text-xs md:text-sm border-white"
             placeholder="Pesquisar..."
           />
           <button class="img-down-arrow" type="button" id="user-menu-button" phx-click={LiveGistWeb.Layouts.App.toggle_dropdown_menu()}>
-            <img src="/images/user.svg" alt="Profile Icon" class="round-image-padding h-7" />
+            <img src="/images/user.svg" alt="Profile Icon" class="round-image-padding h-6 md:h-7" />
           </button>
           <div
             id="dropdown_menu"
@@ -93,26 +93,26 @@
           </div>
         </sidenav>
       </div>
-      <nav class="flex relative space-x-3 pl-2">
-        <a href={~p"/"} class="mt-2 text-white text-[1rem] font-brand font-bold hover:text-emDark-light">
+      <nav class="relative space-x-3 pl-2 hidden md:flex">
+        <a href={~p"/"} class="mt-2 text-white md:text-[1rem] font-brand font-bold hover:text-emDark-light">
           Home
         </a>
-        <a href={~p"/about"} class="mt-2 text-white text-[1rem] font-brand font-bold hover:text-emDark-light">
+        <a href={~p"/about"} class="mt-2 text-white md:text-[1rem] font-brand font-bold hover:text-emDark-light">
           Sobre mim
         </a>
-        <a href={~p"/projects"} class="mt-2 text-white text-[1rem] font-brand font-bold hover:text-emDark-light">
+        <a href={~p"/projects"} class="mt-2 text-white md:text-[1rem] font-brand font-bold hover:text-emDark-light">
           Projetos
         </a>
-        <a href={~p"/blog"} class="mt-2 text-white text-[1rem] font-brand font-bold hover:text-emDark-light">
+        <a href={~p"/blog"} class="mt-2 text-white md:text-[1rem] font-brand font-bold hover:text-emDark-light">
           Blog
         </a>
-        <a href={~p"/freeMaterials"} class="mt-2 text-white text-[1rem] font-brand font-bold hover:text-emDark-light">
+        <a href={~p"/freeMaterials"} class="mt-2 text-white md:text-[1rem] font-brand font-bold hover:text-emDark-light">
           Materiais Gratuitos
         </a>
-        <a href={~p"/studyHall"} class="mt-2 text-white text-[1rem] font-brand font-bold hover:text-emDark-light">
+        <a href={~p"/studyHall"} class="mt-2 text-white md:text-[1rem] font-brand font-bold hover:text-emDark-light">
           Sala de estudos
         </a>
-        <a href={~p"/talkToMe"} class="mt-2 text-white text-[1rem] font-brand font-bold hover:text-emDark-light">
+        <a href={~p"/talkToMe"} class="mt-2 text-white md:text-[1rem] font-brand font-bold hover:text-emDark-light">
           Fale comigo
         </a>
       </nav>
@@ -120,19 +120,19 @@
   </header>
   <main class="flex-grow">
     <div class="flex justify-center em-gradient">
-      <container class="max-w-7xl">
+      <container class="md:max-w-7xl">
         <.flash_group flash={@flash} />
         <%= @inner_content %>
       </container>
     </div>
   </main>
   <footer class="flex justify-center text-white font-brand font-regular">
-    <container class="max-w-7xl flex-grow flex justify-between px-6 py-4 border-t-[1px] border-white">
+    <container class="md:max-w-7xl flex-grow flex justify-between px-6 py-4 border-t-[1px] border-white">
       <copy class="flex items-center">
-        <img src="/images/balance.svg" alt="Balance Icon" class="h-7" />
-        <span><strong class="text-xl">oliveiravictorp</strong> © 2023</span>
+        <img src="/images/balance.svg" alt="Balance Icon" class="h-6 md:h-7" />
+        <span><strong class="md:text-xl">oliveiravictorp</strong> © 2023</span>
       </copy>
-      <nav class="flex items-center text-emLavender-dark space-x-2">
+      <nav class="flex items-center text-emLavender-dark space-x-2 text-sm md:text-base">
         <a href={~p"/"} class="hover:underline">Termos</a>
         <a href={~p"/"} class="hover:underline">Privacidade</a>
         <a href={~p"/"} class="hover:underline">Sobre</a>
