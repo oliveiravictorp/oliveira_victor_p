@@ -26,9 +26,7 @@ defmodule OliveiraVictorP.GistsFixtures do
   def saved_gist_fixture(attrs \\ %{}) do
     {:ok, saved_gist} =
       attrs
-      |> Enum.into(%{
-
-      })
+      |> Enum.into(%{})
       |> OliveiraVictorP.Gists.create_saved_gist()
 
     saved_gist

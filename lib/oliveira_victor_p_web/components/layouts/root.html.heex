@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en"> <%!-- class="[scrollbar-gutter:stable]" --%>
+<html lang="en">
+  <%!-- class="[scrollbar-gutter:stable]" --%>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -10,6 +11,10 @@
     <link phx-track-static rel="stylesheet" href={~p"/assets/app.css"} />
     <script defer phx-track-static type="text/javascript" src={~p"/assets/app.js"}>
     </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
+    />
   </head>
   <body class="dark:bg-emDark-dark bg-white antialiased">
     <%= @inner_content %>

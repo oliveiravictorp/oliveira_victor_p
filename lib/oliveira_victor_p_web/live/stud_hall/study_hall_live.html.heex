@@ -1,4 +1,40 @@
 <.flash_group flash={@flash} />
 <div class="flex items-center justify-center h-[220px]">
-  <h1 class="font-brand font-bold text-lg sm:text-xl md:text-2xl text-white">Compartilhe instantaneamente códigos, notas e snippets de Elixir</h1>
+  <h1 class="font-brand font-bold text-lg sm:text-xl md:text-2xl text-white">
+    Compartilhe instantaneamente códigos, notas e snippets de Elixir
+  </h1>
 </div>
+<.form for={@form} phx-submit="create" phx-change="validate">
+  <div class="justify-center w-full space-y-4 mb-10">
+    <.input field={@form[:description]} placeholder="Descrição do gist..." autocomplete="off" phx-debounce="blur" />
+    <div>
+      <div class="flex p-2 items-center bg-emDark rounded-t-md border">
+        <div class="w-[300px] mb-2">
+          <.input
+            field={@form[:name]}
+            placeholder="Nome do arquivo incluindo a extensão..."
+            autocomplete="off"
+            phx-debounce="blur"
+          />
+        </div>
+      </div>
+      <div id="gist-wrapper" class="flex w-full" phx-update="ignore">
+        <textarea id="line-numbers" class="line-numbers rounded-bl-md" readonly>
+          <%= "1\n" %>
+        </textarea>
+        <%= textarea(@form, :markup_text,
+          id: "gist-textarea",
+          phx_hook: "UpdateLineNumbers",
+          class: "textarea w-full rounded-br-md",
+          placeholder: "Insira o código...",
+          spellcheck: "false",
+          autocomplete: "off",
+          phx_debounce: "blur"
+        ) %>
+      </div>
+    </div>
+    <div class="flex justify-end">
+      <.button class="create_button" phx-disabled-with="Criando...">Criar gist</.button>
+    </div>
+  </div>
+</.form>
